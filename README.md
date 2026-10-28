@@ -20,3 +20,9 @@
 ![Блокировка интерфейса](./img/step4_Igoshin_Imashev.png) 
 
 ---
+## Как запустить
+## Запуск
+1. `git clone <url>`
+2. `cd slot_machine...`
+3. `flutter pub get`
+4. `flutter run -d chrome`
