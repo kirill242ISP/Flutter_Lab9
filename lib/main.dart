@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:slot_machine_igoshin_imashev/slot_machine.dart';
+import 'slot_machine.dart';
 
 void main() {
   runApp(
@@ -7,8 +7,27 @@ void main() {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.deepPurple,
-        body: SlotMachine(),
-      ),
-    ),
+        body: SafeArea(
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              return SingleChildScrollView(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    minWidth:
+                        constraints.maxWidth,
+                    minHeight:
+                        constraints.maxHeight,
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.all(16),
+                    child: SlotMachine(),
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
+      ), // Scaffold
+    ), // MaterialApp
   );
 }

@@ -42,3 +42,5 @@ android {
 flutter {
     source = "../.."
 }
+compileSdk = flutter.compileSdkVersion
+ndkVersion = flutter.ndkVersion
